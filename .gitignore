@@ -1,0 +1,8 @@
+# Aucune dépendance à builder : le site est un seul index.html statique.
+# On ignore juste les artefacts d'OS / éditeurs et les sauvegardes locales.
+.DS_Store
+Thumbs.db
+*.log
+
+# Sauvegardes JSON exportées depuis l'app (données perso — ne pas publier)
+confluence-log-*.json
