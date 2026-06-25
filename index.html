@@ -212,6 +212,122 @@ hr.soft{border:none;border-top:1px solid var(--line-soft);margin:16px 0}
 .inline-add input{flex:1}
 .pair-leg{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px;background:var(--panel-2);border-radius:8px;border:1px solid var(--line);margin-bottom:8px}
 .pair-leg .leg-tag{font-family:var(--mono);font-size:10px;color:var(--txt-faint);grid-column:1/-1;text-transform:uppercase;letter-spacing:.6px}
+/* ---- tri-state lens engine ---- */
+.lens-engine{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(max-width:600px){.lens-engine{grid-template-columns:1fr}}
+.lens-row{background:var(--panel-2);border:1px solid var(--line);border-radius:9px;padding:11px 12px}
+.lens-row .lr-head{display:flex;align-items:baseline;gap:7px;margin-bottom:8px}
+.lens-row .lr-name{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.4px}
+.lens-row .lr-metric{font-family:var(--mono);font-size:10px;color:var(--txt-faint)}
+.tri{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.tri button{background:var(--bg);border:1px solid var(--line);color:var(--txt-dim);font-family:var(--mono);font-size:10px;font-weight:600;padding:7px 4px;border-radius:6px;cursor:pointer;transition:.13s;text-align:center;line-height:1.25;letter-spacing:.2px}
+.tri button .tv{display:block;font-size:9px;color:var(--txt-faint);font-weight:500;margin-top:2px}
+.tri button:hover{border-color:var(--txt-faint);color:var(--txt)}
+.tri button.on{color:#0c0e13;font-weight:700}
+.tri button.on .tv{color:#0c0e13;opacity:.7}
+.tri button.on.s-calm{background:var(--bullish);border-color:var(--bullish)}
+.tri button.on.s-tension{background:var(--tension);border-color:var(--tension)}
+.tri button.on.s-stress{background:var(--squeeze);border-color:var(--squeeze)}
+/* ---- verdict panel (signature element) ---- */
+.verdict{border-radius:11px;border:1px solid var(--line);overflow:hidden;margin-top:4px;transition:.2s}
+.verdict.v-pass{border-color:#3a3f4d}
+.verdict.v-caution{border-color:#553f1e}
+.verdict.v-trade{border-color:#1e553e}
+.verdict-top{display:flex;align-items:stretch;gap:0}
+.verdict-badge{flex:0 0 132px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:16px 10px;text-align:center}
+.verdict.v-pass .verdict-badge{background:#1a1d26}
+.verdict.v-caution .verdict-badge{background:var(--accent-soft)}
+.verdict.v-trade .verdict-badge{background:#163a2a}
+.verdict-badge .vb-label{font-family:var(--mono);font-size:15px;font-weight:700;letter-spacing:1px}
+.verdict.v-pass .vb-label{color:var(--txt-dim)}
+.verdict.v-caution .vb-label{color:var(--tension)}
+.verdict.v-trade .vb-label{color:var(--bullish)}
+.verdict-badge .vb-size{font-family:var(--mono);font-size:26px;font-weight:700;color:var(--txt);margin-top:3px;line-height:1}
+.verdict-badge .vb-sizecap{font-family:var(--mono);font-size:9px;color:var(--txt-faint);margin-top:3px;letter-spacing:.4px}
+.verdict-detail{flex:1;padding:13px 15px;display:flex;flex-direction:column;gap:8px;justify-content:center;background:var(--panel)}
+.vd-line{display:flex;align-items:center;gap:9px;font-size:12px}
+.vd-line .vd-k{font-family:var(--mono);font-size:10px;color:var(--txt-faint);text-transform:uppercase;letter-spacing:.7px;flex:0 0 78px}
+.vd-line .vd-v{color:var(--txt);font-weight:500}
+.grid-pill{font-family:var(--mono);font-size:11px;font-weight:700;padding:2px 9px;border-radius:5px;letter-spacing:.3px}
+.grid-A{background:#163a2a;color:var(--bullish);border:1px solid #1e553e}
+.grid-B{background:#3a1818;color:var(--squeeze);border:1px solid #552222}
+.grid-none{background:#1a1d26;color:var(--txt-faint);border:1px solid var(--line)}
+.action-cell{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--txt)}
+.verdict-flags{border-top:1px solid var(--line);padding:9px 15px;display:flex;flex-wrap:wrap;gap:7px;background:var(--panel)}
+.vflag{font-family:var(--mono);font-size:10px;font-weight:600;padding:3px 9px;border-radius:5px;display:inline-flex;align-items:center;gap:5px}
+.vflag-warn{background:#3a2c16;color:var(--tension);border:1px solid #553f1e}
+.vflag-stop{background:#3a1818;color:var(--squeeze);border:1px solid #552222}
+.vflag-ok{background:#163a2a;color:var(--bullish);border:1px solid #1e553e}
+.iv-state-row{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:2px}
+.iv-state-row button{background:var(--bg);border:1px solid var(--line);color:var(--txt-dim);font-family:var(--mono);font-size:10px;font-weight:600;padding:8px 4px;border-radius:6px;cursor:pointer;transition:.13s}
+.iv-state-row button:hover{border-color:var(--txt-faint);color:var(--txt)}
+.iv-state-row button.on{background:var(--gex);border-color:var(--gex);color:#0c0e13;font-weight:700}
+.quick-toggle{margin-left:auto;display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;color:var(--txt-dim)}
+.collapse-sec{transition:.2s}
+.collapse-sec.hidden{display:none}
+.ctx-chip{background:var(--bg);border:1px solid var(--line);color:var(--txt-dim);font-family:var(--mono);font-size:10px;font-weight:600;padding:6px 11px;border-radius:6px;cursor:pointer;transition:.13s}
+.ctx-chip:hover{border-color:var(--txt-faint);color:var(--txt)}
+.ctx-chip.on{background:#3a2c16;border-color:#553f1e;color:var(--tension)}
+.ctx-chip.on[data-ctx=macroEvent],.ctx-chip.on[data-ctx=multiIndex]{background:#3a1818;border-color:#552222;color:var(--squeeze)}
+/* ---- direction picker (sens lentille) ---- */
+.dir-pick{display:flex;align-items:center;gap:5px;margin-top:7px}
+.dir-pick.hidden{display:none}
+.dir-pick .dir-lbl{font-family:var(--mono);font-size:9px;color:var(--txt-faint);text-transform:uppercase;letter-spacing:.6px;margin-right:2px}
+.dir-b{flex:1;background:var(--bg);border:1px solid var(--line);color:var(--txt-dim);font-family:var(--mono);font-size:10px;font-weight:600;padding:5px 4px;border-radius:5px;cursor:pointer;transition:.13s}
+.dir-b:hover{border-color:var(--txt-faint);color:var(--txt)}
+.dir-bull.on{background:#163a2a;border-color:#1e553e;color:var(--bullish)}
+.dir-bear.on{background:#3a1818;border-color:#552222;color:var(--squeeze)}
+/* ---- level picker (8 niveaux) ---- */
+.level-pick{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}
+@media(max-width:600px){.level-pick{grid-template-columns:repeat(2,1fr)}}
+.lvl-b{background:var(--panel-2);border:1px solid var(--line);border-radius:7px;padding:8px 6px;cursor:pointer;transition:.13s;text-align:left;display:flex;flex-direction:column;gap:3px}
+.lvl-b:hover{border-color:var(--txt-faint)}
+.lvl-b .lvl-name{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--txt)}
+.lvl-b .lvl-elig{font-family:var(--mono);font-size:9px;letter-spacing:.3px}
+.lvl-b.e-actif{border-color:#1e553e}.lvl-b.e-actif .lvl-elig{color:var(--bullish)}
+.lvl-b.e-repere .lvl-elig,.lvl-b.e-cible .lvl-elig{color:var(--accent)}
+.lvl-b.e-cassure .lvl-elig{color:var(--tension)}
+.lvl-b.e-eteint{opacity:.45}.lvl-b.e-eteint .lvl-elig{color:var(--txt-faint)}
+.lvl-b.on{background:#1c2029;border-color:var(--accent);box-shadow:0 0 0 1px var(--accent-line)}
+.lvl-b.on .lvl-name{color:var(--accent)}
+/* ---- bias & level pills dans le verdict ---- */
+.bias-pill{font-family:var(--mono);font-size:10px;font-weight:700;padding:2px 8px;border-radius:5px;margin-left:6px}
+.bias-bull{background:#163a2a;color:var(--bullish);border:1px solid #1e553e}
+.bias-bear{background:#3a1818;color:var(--squeeze);border:1px solid #552222}
+.bias-contra{background:#3a2c16;color:var(--tension);border:1px solid #553f1e}
+.lvl-tag{font-family:var(--mono);font-size:9px;font-weight:700;padding:1px 6px;border-radius:4px}
+.lvl-tag.e-actif{background:#163a2a;color:var(--bullish)}
+.lvl-tag.e-eteint{background:#3a1818;color:var(--squeeze)}
+.lvl-tag.e-other{background:#3a2c16;color:var(--accent)}
+/* ---- onglet Edge ---- */
+.edge-block{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px;margin-bottom:14px}
+.edge-2col{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:820px){.edge-2col{grid-template-columns:1fr}}
+.edge-h{font-size:13px;font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:8px;letter-spacing:.2px}
+.edge-wf{display:grid;gap:8px}
+.ewf-row{display:grid;grid-template-columns:26px 1fr;gap:11px;align-items:start;padding:9px 11px;background:var(--panel-2);border-radius:8px}
+.ewf-num{background:var(--accent);color:#1a1408;width:22px;height:22px;border-radius:6px;display:grid;place-items:center;font-family:var(--mono);font-weight:700;font-size:11px}
+.ewf-t{font-size:13px;font-weight:600;margin-bottom:2px}
+.ewf-d{font-size:11px;color:var(--txt-dim);line-height:1.5}
+.edge-surcouche{display:flex;flex-direction:column;gap:6px;margin-top:12px}
+.edge-tbl{width:100%;border-collapse:collapse;font-size:12px}
+.edge-tbl th{text-align:left;font-family:var(--mono);font-size:10px;font-weight:600;color:var(--txt-faint);text-transform:uppercase;letter-spacing:.5px;padding:7px 9px;border-bottom:1px solid var(--line)}
+.edge-tbl td{padding:8px 9px;border-bottom:1px solid var(--line-soft);vertical-align:top;line-height:1.4}
+.edge-tbl tr:last-child td{border-bottom:none}
+.edge-tbl .th-calm{color:var(--bullish)}.edge-tbl .th-tension{color:var(--tension)}.edge-tbl .th-stress{color:var(--squeeze)}
+.edge-tbl td.mono{font-family:var(--mono);font-weight:600;font-size:11px;white-space:nowrap}
+.ec-actif{color:var(--bullish);font-weight:600;background:#163a2a55}
+.ec-eteint{color:var(--txt-faint);background:#1a1d2655}
+.ec-cassure{color:var(--tension);background:#3a2c1655}
+.ec-other{color:var(--accent);background:#3a2c1633}
+.ec-calm{color:var(--bullish)}.ec-tension2{color:var(--tension)}.ec-stress2{color:var(--squeeze)}.ec-warn{color:var(--tension)}
+.edge-note{font-size:11px;color:var(--txt-dim);font-style:italic;margin-top:10px;line-height:1.5}
+.verdict-tag{font-family:var(--mono);font-size:10px;font-weight:700;padding:2px 8px;border-radius:5px}
+.verdict-tag.v-pass{background:#1a1d26;color:var(--txt-dim)}
+.verdict-tag.v-caution{background:#3a2c16;color:var(--tension)}
+.verdict-tag.v-trade{background:#163a2a;color:var(--bullish)}
+.edge-rule-p{font-size:12px;color:var(--txt);line-height:1.7;margin-bottom:3px}
+.edge-rule-p b{color:var(--accent)}
 /* ---- cockpit ---- */
 .cockpit-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
 @media(max-width:820px){.cockpit-grid{grid-template-columns:1fr}}
@@ -253,31 +369,6 @@ hr.soft{border:none;border-top:1px solid var(--line-soft);margin:16px 0}
 </style>
 </head>
 <body>
-<header>
-  <div class="brand">
-    <span class="glyph">◇⃝</span>
-    <div>
-      <h1>Confluence Log</h1>
-    </div>
-    <span class="sub" id="todayDate"></span>
-  </div>
-  <nav id="nav">
-    <button data-view="today" class="active">Aujourd'hui</button>
-    <button data-view="timeline">Timeline</button>
-    <button data-view="journal">Journal</button>
-    <button data-view="trades">Trades</button>
-    <button data-view="confluence">Confluences</button>
-    <button data-view="stats">Stats</button>
-    <button data-view="tags">Tags</button>
-    <button onclick="exportDB()" title="Sauvegarder toutes les données dans un fichier">⤓ Export</button>
-    <button onclick="document.getElementById('importFile').click()" title="Restaurer depuis un fichier">⤒ Import</button>
-    <input type="file" id="importFile" accept="application/json" style="display:none" onchange="importDB(this)">
-    <span id="syncBadge" title="État de la synchronisation cloud" style="display:none;font-family:var(--mono);font-size:11px;padding:5px 10px;border-radius:6px;color:var(--txt-dim);border:1px solid var(--line)"></span>
-    <button id="signOutBtn" onclick="cloudSignOut()" title="Se déconnecter" style="display:none">⎋ Déco</button>
-  </nav>
-</header>
-
-<!-- ======================= LOGIN (Supabase) ======================= -->
 <div id="loginOverlay" style="display:none;position:fixed;inset:0;z-index:9999;background:var(--bg);align-items:center;justify-content:center;padding:16px">
   <div style="background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:30px 28px;width:min(380px,94vw);box-shadow:0 14px 50px rgba(0,0,0,.45)">
     <div style="display:flex;align-items:baseline;gap:9px;margin-bottom:6px">
@@ -294,6 +385,30 @@ hr.soft{border:none;border-top:1px solid var(--line-soft);margin:16px 0}
     <button class="btn ghost" onclick="cloudSignUp()" style="width:100%;margin-top:9px;padding:10px">Créer un compte</button>
   </div>
 </div>
+<header>
+  <div class="brand">
+    <span class="glyph">◇⃝</span>
+    <div>
+      <h1>Confluence Log</h1>
+    </div>
+    <span class="sub" id="todayDate"></span>
+  </div>
+  <nav id="nav">
+    <button data-view="today" class="active">Aujourd'hui</button>
+    <button data-view="timeline">Timeline</button>
+    <button data-view="journal">Journal</button>
+    <button data-view="trades">Trades</button>
+    <button data-view="confluence">Confluences</button>
+    <button data-view="edge">Edge</button>
+    <button data-view="stats">Stats</button>
+    <button data-view="tags">Tags</button>
+    <button onclick="exportDB()" title="Sauvegarder toutes les données dans un fichier">⤓ Export</button>
+    <button onclick="document.getElementById('importFile').click()" title="Restaurer depuis un fichier">⤒ Import</button>
+    <input type="file" id="importFile" accept="application/json" style="display:none" onchange="importDB(this)">
+    <span id="syncBadge" title="État de la synchronisation cloud" style="display:none;font-family:var(--mono);font-size:11px;padding:5px 10px;border-radius:6px;color:var(--txt-dim);border:1px solid var(--line)"></span>
+    <button id="signOutBtn" onclick="cloudSignOut()" title="Se déconnecter" style="display:none">⎋ Déco</button>
+  </nav>
+</header>
 <main>
 
 <!-- ======================= TODAY ======================= -->
@@ -487,6 +602,18 @@ hr.soft{border:none;border-top:1px solid var(--line-soft);margin:16px 0}
   <div class="grid" id="confList" style="grid-template-columns:repeat(auto-fill,minmax(320px,1fr))"></div>
 </section>
 
+<!-- ======================= EDGE (référence) ======================= -->
+<section class="view" id="view-edge">
+  <div class="view-head">
+    <div>
+      <span class="eyebrow">Référence du système · lecture seule</span>
+      <h2>Edge</h2>
+      <p>Le cœur de décision rendu depuis le moteur lui-même : matrices toujours synchro avec le logger. Workflow 6 étapes, lentilles × régime, sizing, niveaux actifs, grilles A/B, peaks Vanna/Charm, garde-fous.</p>
+    </div>
+  </div>
+  <div id="edgeContent"></div>
+</section>
+
 <!-- ======================= STATS ======================= -->
 <section class="view" id="view-stats">
   <div class="view-head">
@@ -625,59 +752,82 @@ hr.soft{border:none;border-top:1px solid var(--line-soft);margin:16px 0}
 <!-- ===== TRADE MODAL ===== -->
 <div class="overlay" id="tradeModal">
   <div class="modal">
-    <div class="modal-head"><h3 id="tradeTitle">Logger un trade</h3><button class="close-x" onclick="closeModal('tradeModal')">×</button></div>
+    <div class="modal-head"><h3 id="tradeTitle">Logger un trade</h3>
+      <label class="quick-toggle" title="Masque sortie, pièces jointes et tags pour un log live ultra-rapide"><input type="checkbox" id="t_quick" style="width:auto" onchange="toggleQuickLog()"> Quick log</label>
+      <button class="close-x" onclick="closeModal('tradeModal')">×</button></div>
     <div class="modal-body">
-      <div class="flow-divider"><span class="num">1</span> Type & contexte</div>
-      <label class="field"><span>Type de trade</span></label>
-      <div class="seg" id="t_type" style="margin-bottom:14px">
-        <button data-t="options" class="on">Options</button>
-        <button data-t="directional">Directionnel pur</button>
-        <button data-t="pairs">Pairs trading</button>
-      </div>
+      <div class="flow-divider"><span class="num">1</span> Contexte</div>
       <div class="row">
-        <label class="field"><span>Date d'entrée</span><input type="date" id="t_entry"></label>
-        <label class="field"><span>Régime de marché</span>
-          <select id="t_regime"><option value="calm">Calm</option><option value="tension">Tension</option><option value="squeeze">Squeeze</option><option value="bullish">Bullish</option><option value="neutral">Neutral</option></select>
-        </label>
+        <label class="field" style="flex:0 0 auto"><span>Type</span></label>
+        <div class="seg" id="t_type" style="margin-bottom:14px">
+          <button data-t="options" class="on">Options</button>
+          <button data-t="directional">Directionnel</button>
+          <button data-t="pairs">Pairs</button>
+        </div>
       </div>
-
       <!-- single underlying -->
       <div id="t_single">
-        <label class="field"><span>Sous-jacent (ticker)</span><input id="t_under" placeholder="SPX · USD/JPY · Silver · Copper…"></label>
+        <div class="row">
+          <label class="field" style="flex:2"><span>Sous-jacent</span><input id="t_under" placeholder="ES · NQ · YM · RTY · GC · SI…"></label>
+          <label class="field" style="flex:1"><span>Date</span><input type="date" id="t_entry"></label>
+        </div>
       </div>
       <!-- pairs legs -->
       <div id="t_pairsBox" style="display:none">
         <div class="pair-leg">
           <span class="leg-tag">Jambe longue</span>
-          <input id="t_legLong" placeholder="Long — ex. Gold">
-          <input id="t_legLongQty" placeholder="Ratio / notional — ex. 1.0">
+          <input id="t_legLong" placeholder="Long — ex. GC">
+          <input id="t_legLongQty" placeholder="Ratio / β — ex. 1.0">
         </div>
         <div class="pair-leg">
           <span class="leg-tag">Jambe courte</span>
-          <input id="t_legShort" placeholder="Short — ex. Silver">
-          <input id="t_legShortQty" placeholder="Ratio / notional — ex. 1.4">
+          <input id="t_legShort" placeholder="Short — ex. SI">
+          <input id="t_legShortQty" placeholder="Ratio / β — ex. 1.4">
         </div>
+        <label class="field"><span>Date d'entrée</span><input type="date" id="t_entryPairs" onchange="document.getElementById('t_entry').value=this.value"></label>
       </div>
 
-      <label class="field"><span>Confluence — verdict court</span><input id="t_conf" placeholder="imminent breakout · mechanical rebound · severe squeeze…"></label>
+      <div class="flow-divider"><span class="num">2</span> Lentilles — état directionnel</div>
+      <p class="help" style="margin:-6px 0 12px">Quatre lentilles, trois états chacune (image 2). Le régime, la grille et la taille se calculent automatiquement. Saisissez le percentile 1 an si vous l'avez — il affine le score.</p>
+      <div class="lens-engine" id="t_lensEngine"></div>
 
-      <div class="flow-divider"><span class="num">2</span> Lentilles alignées</div>
-      <p class="help" style="margin:-6px 0 12px">Cochez les lentilles qui pointent dans le même sens et notez leur percentile 1 an.</p>
-      <div class="lens-pick" id="t_lenses"></div>
+      <div class="flow-divider"><span class="num">3</span> Niveau actif au contact</div>
+      <p class="help" style="margin:-6px 0 10px">Le centre s'éteint vers les bords quand le stress monte. L'éligibilité de chaque niveau s'affiche selon le régime calculé. Un niveau <b>éteint</b> = PASS.</p>
+      <div class="level-pick" id="t_levelPick"></div>
 
-      <div class="flow-divider"><span class="num">3</span> Structure & sizing</div>
-      <label class="field"><span id="t_structLabel">Structure — instrument, strike, expiry</span><input id="t_struct" placeholder="Buy puts $80 strike 14 DTE"></label>
-      <div class="row">
-        <label class="field"><span>Sizing (% capital risqué)</span><input id="t_size" placeholder="1.5" inputmode="decimal"></label>
-        <label class="field"><span>Conviction</span>
+      <div class="flow-divider"><span class="num">4</span> Arbitre intraday — IV ATM</div>
+      <p class="help" style="margin:-6px 0 10px">L'arbitre suprême (Gate 2). Croisé avec la grille et le niveau, il donne l'action exacte : fade plein, prudence, cassure, explose.</p>
+      <div class="iv-state-row" id="t_ivState"></div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:12px" id="t_ctxBar">
+        <button type="button" class="ctx-chip" data-ctx="macroEvent" onclick="toggleCtx('macroEvent')">⛔ Macro event (CPI/NFP/FOMC)</button>
+        <button type="button" class="ctx-chip" data-ctx="multiIndex" onclick="toggleCtx('multiIndex')">⛔ Corrél 4 indices > 0,9</button>
+        <button type="button" class="ctx-chip" data-ctx="gapOpen" onclick="toggleCtx('gapOpen')">⚠ Gap d'open</button>
+        <button type="button" class="ctx-chip" data-ctx="dealerSign" onclick="toggleCtx('dealerSign')">⚠ Décote dealer_sign</button>
+        <button type="button" class="ctx-chip" data-ctx="late" onclick="toggleCtx('late')">⚠ Fin de séance</button>
+      </div>
+
+      <div class="flow-divider"><span class="num">5</span> Verdict</div>
+      <div class="verdict" id="t_verdict"></div>
+      <div class="row" style="margin-top:12px">
+        <label class="field"><span>Régime <span class="faint" style="font-weight:400">· auto, modifiable</span></span>
+          <select id="t_regime"><option value="calm">Calm</option><option value="tension">Tension</option><option value="squeeze">Stress / Squeeze</option><option value="bullish">Bullish</option><option value="neutral">Neutral</option></select>
+        </label>
+        <label class="field"><span>Sizing (%) <span class="faint" style="font-weight:400">· auto, modifiable</span></span><input id="t_size" placeholder="1.0" inputmode="decimal"></label>
+        <label class="field" style="flex:0 0 auto"><span>Conviction <span class="faint" style="font-weight:400">· auto</span></span>
           <div class="conf-meter" id="t_convMeter" style="margin-top:9px">
             <div class="dot" data-v="1"></div><div class="dot" data-v="2"></div><div class="dot" data-v="3"></div><div class="dot" data-v="4"></div><div class="dot" data-v="5"></div>
           </div>
         </label>
       </div>
-      <label class="field"><span>Seuil d'invalidation</span><input id="t_inval" placeholder="Quand arrêter de croire au scénario — ex. lease rate < 5% ET stocks LME +5kt"></label>
 
-      <div class="flow-divider"><span class="num">4</span> Sortie & leçon</div>
+      <div class="flow-divider"><span class="num">6</span> Exécution</div>
+      <label class="field"><span>Confluence — verdict court</span><input id="t_conf" placeholder="fade niveau actif · cassure momentum · pivot cassé…"></label>
+      <label class="field"><span id="t_structLabel">Structure — instrument, strike, expiry</span><input id="t_struct" placeholder="Buy puts $80 strike 14 DTE"></label>
+      <label class="field"><span>Seuil d'invalidation <span class="faint" style="font-weight:400">· bagottage 2-3 ticks = abandon</span></span><input id="t_inval" placeholder="Niveau invalidé si… — ex. spot reprend > 5800 + GEX repasse positif"></label>
+
+      <div class="collapse-sec" id="t_fullSec">
+      <div class="flow-divider"><span class="num">7</span> Sortie & leçon</div>
       <div class="row">
         <label class="field"><span>Date de sortie (laisser vide si ouvert)</span><input type="date" id="t_exit"></label>
         <label class="field"><span>P&L (%)</span><input id="t_pnlpct" placeholder="+185" inputmode="decimal"></label>
@@ -696,6 +846,7 @@ hr.soft{border:none;border-top:1px solid var(--line-soft);margin:16px 0}
       <hr class="soft">
       <label class="field"><span>Tags</span></label>
       <div class="tag-pool" id="t_tagpool"></div>
+      </div><!-- /t_fullSec -->
     </div>
     <div class="modal-foot">
       <button class="btn danger sm" id="t_delBtn" onclick="deleteTrade()" style="margin-right:auto;display:none">Supprimer</button>
@@ -752,8 +903,8 @@ hr.soft{border:none;border-top:1px solid var(--line-soft);margin:16px 0}
 <script>
 /* ============================================================
    CONFLUENCE LOG — couche données & logique
-   Persistance: window.storage (clé-valeur, cross-session).
-   Pas de localStorage (non supporté ici).
+   Persistance: synchro cloud Supabase (login e-mail+mdp, RLS par user)
+   + cache localStorage hors-ligne. Export/Import JSON pour les sauvegardes.
    ============================================================ */
 
 const LENSES = [
@@ -763,6 +914,180 @@ const LENSES = [
   {id:'term', name:'Term', cls:'l-term', full:'Term Structure VX1-VX3'},
   {id:'phys', name:'Phys', cls:'l-phys', full:'Signaux physiques'},
 ];
+
+/* ====================== MOTEUR DE VERDICT (images 1-6) ======================
+   Encode la chaîne déterministe : états des 4 lentilles → régime → grille →
+   permission → taille → cellule d'action. Le verdict est calculé, pas saisi. */
+
+// 4 lentilles directionnelles + leurs 3 états (image 2). 'phys' reste libre (chips).
+const LENS4 = [
+  {id:'gex',  name:'GEX',  metric:'gamma / flip', states:[
+    {v:'calm',    label:'Gamma +',  sub:'mur, pinning'},
+    {v:'tension', label:'≈ flip',   sub:'niveaux mous'},
+    {v:'stress',  label:'Gamma −',  sub:'accélérateur'}]},
+  {id:'vega', name:'Vega', metric:'VVOL / VOL', states:[
+    {v:'calm',    label:'Bas',      sub:'fades pleins'},
+    {v:'tension', label:'Vanna',    sub:'s\'arme'},
+    {v:'stress',  label:'Haut',     sub:'coupe fades'}]},
+  {id:'rr',   name:'RR 25Δ', metric:'percentile 1Y', dir:true, states:[
+    {v:'calm',    label:'Neutre',   sub:'niveaux fiables'},
+    {v:'tension', label:'Penché',   sub:'1 côté'},
+    {v:'stress',  label:'95e+ / 5−',sub:'pas de fade'}]},
+  {id:'term', name:'Term', metric:'VX1-VX3', states:[
+    {v:'calm',    label:'Contango', sub:'calme'},
+    {v:'tension', label:'Flat',     sub:'flattening'},
+    {v:'stress',  label:'Backwrd',  sub:'backwardation'}]},
+];
+
+// Arbitre intraday (Gate 2)
+const IV_STATES = [
+  {v:'stable_pos', label:'IV stable', sub:'G+ / régime'},
+  {v:'up',         label:'IV monte',  sub:'> 1% · prudence'},
+  {v:'stable_neg', label:'IV stable', sub:'G− / cible TP'},
+  {v:'spike',      label:'IV spike',  sub:'explose'},
+];
+
+// ====== 8 NIVEAUX ACTIFS (Synthèse régimes — extinction centre → bords) ======
+// éligibilité par régime : actif | repere | eteint | cassure | cible
+const LEVELS = [
+  {id:'maxev',  name:'Max event',       zone:'haut', calm:'eteint', tension:'repere', stress:'actif'},
+  {id:'max1d',  name:'Max 1D',          zone:'haut', calm:'repere', tension:'actif',  stress:'cible'},
+  {id:'wallup', name:'Wall upper',      zone:'haut', calm:'actif',  tension:'actif',  stress:'cassure'},
+  {id:'ctrls',  name:'Contrôle seller', zone:'centre',calm:'actif', tension:'eteint', stress:'eteint'},
+  {id:'ctrlb',  name:'Contrôle buyer',  zone:'centre',calm:'actif', tension:'eteint', stress:'eteint'},
+  {id:'walllo', name:'Wall lower',      zone:'bas',  calm:'actif',  tension:'actif',  stress:'cassure'},
+  {id:'min1d',  name:'Min 1D',          zone:'bas',  calm:'repere', tension:'actif',  stress:'cible'},
+  {id:'minev',  name:'Min event',       zone:'bas',  calm:'eteint', tension:'repere', stress:'actif'},
+];
+const ELIG_LABEL = {actif:'ACTIF',repere:'repère/cible',eteint:'éteint',cassure:'cassure',cible:'cible'};
+
+// ====== GRILLE A (Gamma + · FADE) — action de base + dégradation IV ======
+const GRID_A = {
+  maxev: {base:'Fade short — butoir ultime', iv_stable:'fiable',          iv_move:'prudence'},
+  max1d: {base:'Fade short si confluence',   iv_stable:'OK',              iv_move:'éviter'},
+  wallup:{base:'Short limite — TP ~20pts',   iv_stable:'résistance nette',iv_move:'peut être percé (Vanna)'},
+  ctrls: {base:'Sell limite (zone haute)',   iv_stable:'OK',              iv_move:'prudence'},
+  ctrlb: {base:'Buy limite (zone basse)',    iv_stable:'OK',              iv_move:'prudence'},
+  walllo:{base:'Long limite — rebond',       iv_stable:'support fiable',  iv_move:'prudence'},
+  min1d: {base:'Fade long si confluence',    iv_stable:'OK',              iv_move:'éviter'},
+  minev: {base:'Fade long — butoir ultime',  iv_stable:'fiable',          iv_move:'prudence'},
+};
+// ====== GRILLE B (Gamma − · MOMENTUM) — rôle + comportement IV ======
+const GRID_B = {
+  maxev: {base:'Cible TP du move haussier',  iv_stable:'tient',           iv_move:'peut sauter'},
+  max1d: {base:'Cible intermédiaire',        iv_stable:'peu fiable',      iv_move:'explose'},
+  wallup:{base:'Buy si cassé ↑ (squeeze)',   iv_stable:'latent',          iv_move:'accélérateur'},
+  ctrls: {base:'Pivot : cassé ↓ = sell',     iv_stable:'ligne de partage',iv_move:'bascule rapide'},
+  ctrlb: {base:'Pivot : intact = biais long',iv_stable:'ligne de partage',iv_move:'bascule rapide'},
+  walllo:{base:'Sell si cassé ↓ (cascade)',  iv_stable:'latent',          iv_move:'cascade violente'},
+  min1d: {base:'Cible intermédiaire baisse', iv_stable:'peu fiable',      iv_move:'explose'},
+  minev: {base:'Cible TP du move baissier',  iv_stable:'tient',           iv_move:'peut sauter'},
+};
+
+// ====== PEAKS VANNA / CHARM (hors grille — vol × temps) ======
+const PEAKS = [
+  {lens:'Vanna (IV)', cond:'IV bouge > 1% · matin',     gpos:'Accompagner vers le pic', gneg:'Cascade, suivre fort'},
+  {lens:'Vanna (IV)', cond:'IV stable',                  gpos:'Inactif — ignorer',       gneg:'Latent'},
+  {lens:'Charm (temps)',cond:'Fin séance · IV stable',   gpos:'Accompagner dérive max pain',gneg:'Dominé, éviter'},
+  {lens:'Charm (temps)',cond:'Avant 14h ET',             gpos:'Négligeable',             gneg:'Négligeable'},
+];
+
+// Cellule d'action générique (fallback si pas de niveau choisi)
+const ACTION_CELL = {
+  A:{ stable_pos:'Fade plein — sell/buy limite', up:'Prudence — fade si conflu', stable_neg:'Cible TP — pivot si cassé', spike:'Peut sauter — sortir le fade' },
+  B:{ stable_pos:'Short TP20 — perçable', up:'Prudence — Vanna prime', stable_neg:'Buy si cassé — cible', spike:'Accélérateur — cascade, suivre' },
+};
+
+// régime = nombre de lentilles ALIGNÉES (audit BGE : même sens, pas juste « en action »)
+function computeVerdict(lens4, ivState, ctx){
+  ctx = ctx || {};
+  const st={}, dir={};
+  LENS4.forEach(l=>{ st[l.id]=(lens4[l.id]&&lens4[l.id].state)||null; dir[l.id]=(lens4[l.id]&&lens4[l.id].dir)||null; });
+  const set = Object.values(st).filter(Boolean);
+  const nLit = set.filter(s=>s!=='calm').length;
+  const nStress = set.filter(s=>s==='stress').length;
+  const nSet = set.length;
+
+  // alignement directionnel : parmi les lentilles hors-calme qui portent un sens
+  const dirs = LENS4.map(l=>st[l.id]&&st[l.id]!=='calm'?dir[l.id]:null).filter(Boolean);
+  const nBull = dirs.filter(d=>d==='bull').length;
+  const nBear = dirs.filter(d=>d==='bear').length;
+  const contradiction = nBull>0 && nBear>0;          // sens opposés = rupture
+  const bias = nBull>nBear?'bull':nBear>nBull?'bear':null;
+  // concordance = max( lentilles directionnelles concordantes , lentilles de même intensité )
+  const dirAligned = Math.max(nBull,nBear);
+  const intensAligned = Math.max(
+    set.filter(s=>s==='stress').length,
+    set.filter(s=>s==='tension').length,
+    set.filter(s=>s==='calm').length
+  );
+  const aligned = Math.max(dirAligned, intensAligned);
+
+  // régime
+  let regime, regimeLabel;
+  if(nSet===0){ regime='neutral'; regimeLabel='— renseigner les lentilles'; }
+  else if(nStress>=3 || (nStress>=2 && nLit>=3)){ regime='squeeze'; regimeLabel='STRESS (≥3) · extrêmes event'; }
+  else if(nLit>=2){ regime='tension'; regimeLabel='PRÉ-STRESS / TENSION (2) · murs + bornes 1D'; }
+  else { regime='calm'; regimeLabel='CALME (0-1) · niveaux internes'; }
+
+  // grille : signe gamma mène
+  let grid=null, gridReason='';
+  if(st.gex==='calm'){ grid='A'; gridReason='Gamma + → fade / mean-reversion (limites, stop k≈1.0-1.5σ)'; }
+  else if(st.gex==='stress'){ grid='B'; gridReason='Gamma − → momentum / cassure (stops, k≈2.0-2.5σ)'; }
+  else if(st.gex==='tension'){ grid=(ivState==='spike'||ivState==='stable_neg')?'B':'A'; gridReason='GEX ≈ flip → arbitré par IV ATM ('+(grid==='B'?'cassure':'fade')+')'; }
+
+  // niveau choisi → éligibilité + action spécifique
+  let levelInfo=null;
+  if(ctx.level){
+    const L=LEVELS.find(x=>x.id===ctx.level);
+    if(L){
+      const elig = regime==='neutral'?null:L[regime==='squeeze'?'stress':regime];
+      const ivKey = (ivState==='up'||ivState==='spike')?'iv_move':'iv_stable';
+      const gtab = grid==='B'?GRID_B:GRID_A;
+      levelInfo={name:L.name, elig, action:gtab[L.id]?gtab[L.id].base:null, ivNote:gtab[L.id]?gtab[L.id][ivKey]:null, grid};
+    }
+  }
+  const action = levelInfo&&levelInfo.action ? levelInfo.action : ((grid&&ivState)?ACTION_CELL[grid][ivState]:null);
+
+  // permission / taille
+  let verdict, size;
+  if(nSet<2){ verdict='caution'; size=0; }
+  else if(contradiction){ verdict='caution'; size=0; }                       // 2 contradictoires
+  else if(regime==='squeeze' && grid==='A'){ verdict='pass'; size=0; }       // fade interdit en stress
+  else if(ivState==='spike' && grid==='A'){ verdict='pass'; size=0; }        // fade qui explose
+  else if(levelInfo && levelInfo.elig==='eteint'){ verdict='pass'; size=0; } // niveau éteint dans ce régime
+  else if(nSet<3){ verdict='caution'; size=0; }                             // <3 lentilles, pas de contradiction
+  else if(grid && action){
+    if(aligned>=4 || (nStress>=2 && aligned>=3)){ verdict='trade'; size=2; }
+    else { verdict='trade'; size=1; }
+  } else { verdict='caution'; size=0; }
+
+  let conv=0;
+  if(verdict==='trade') conv = size===2?5:4;
+  else if(verdict==='caution'&&nSet>=2) conv=2;
+  else if(nSet>=1) conv=1;
+
+  // garde-fous
+  const flags=[];
+  if(contradiction) flags.push({k:'warn', t:`Contradiction ${nBull}↑ vs ${nBear}↓ — rupture, CAUTION 0%`});
+  if(ctx.macroEvent) flags.push({k:'stop', t:'Macro CPI/NFP/FOMC — seuls Max/Min event tiennent, jamais au print'});
+  if(ctx.corr>0.9 || ctx.multiIndex) flags.push({k:'stop', t:'Corrél 4 indices > 0,9 — 1 seul trade, réduire taille'});
+  if(ctx.gapOpen) flags.push({k:'warn', t:'Gap d\'open — revalider les niveaux figés dans les 5 premières minutes'});
+  if(ctx.late) flags.push({k:'warn', t:'Sortie avant cloche — day trading strict, pas d\'overnight'});
+  if(ctx.dealerSign) flags.push({k:'warn', t:'dealer_sign ~30% erreur — décote w_gex appliquée'});
+  if(levelInfo && levelInfo.elig==='eteint') flags.push({k:'stop', t:`${levelInfo.name} éteint en régime ${regime} — ne pas jouer ce niveau`});
+  if(levelInfo && (levelInfo.elig==='cassure'||levelInfo.elig==='cible')) flags.push({k:'warn', t:`${levelInfo.name} = ${ELIG_LABEL[levelInfo.elig]} en ${regime} — rôle momentum, pas fade`});
+  if(verdict==='trade' && grid==='A') flags.push({k:'ok', t:'Spot touche niveau actif non invalidé · bagottage 2-3 ticks = abandon'});
+  if(verdict==='trade' && grid==='B') flags.push({k:'ok', t:'Stop entry sur cassure · trail RR 1:1 · prendre 30-50%'});
+
+  if((ctx.corr>0.9||ctx.multiIndex) && size>1) size=1;
+
+  return {regime, regimeLabel, grid, gridReason, action, levelInfo, bias, contradiction, nBull, nBear, aligned, verdict, size, conv, nSet, nLit, nStress, st, dir, ivState, flags};
+}
+
+const VERDICT_LABEL = {pass:'PASS', caution:'CAUTION', trade:'ON TRADE', neutral:'—'};
+
+
 
 const GMT_SLOTS = [
   {t:'06:00',label:'Overnight check',desc:'Cross-asset RR desks asiatiques · stocks LME · cash Nikkei/HSI vs futures CME. Une lentille a-t-elle basculé à un percentile extrême depuis hier soir ?',danger:false},
@@ -934,6 +1259,264 @@ function lensChips(data){
   }).join(' ') || '<span class="faint">—</span>';
 }
 function lensCount(data){ return data?LENSES.filter(l=>data[l.id]&&data[l.id].on).length:0; }
+
+/* ====================== UI DU MOTEUR DE VERDICT ====================== */
+// État live de l'éditeur de trade
+let tEngine = {lens4:{}, iv:null, ctx:{}};
+
+function renderLensEngine(containerId, lens4){
+  tEngine.lens4 = lens4 || {};
+  const el=document.getElementById(containerId);
+  el.innerHTML = LENS4.map(l=>{
+    const cur=(tEngine.lens4[l.id]||{});
+    const showDir = cur.state && cur.state!=='calm';
+    return `<div class="lens-row" style="color:var(--${l.id})">
+      <div class="lr-head">
+        <span class="lr-name">${l.name}</span>
+        <span class="lr-metric">${l.metric}</span>
+        <input style="width:54px;margin-left:auto;padding:3px 6px;font-size:10px;font-family:var(--mono)" placeholder="pct" value="${cur.pct||''}"
+          onclick="event.stopPropagation()" oninput="setLens4Pct('${l.id}',this.value)">
+      </div>
+      <div class="tri" data-lens="${l.id}">
+        ${l.states.map(s=>`<button class="s-${s.v} ${cur.state===s.v?'on':''}" onclick="setLens4('${l.id}','${s.v}')">${s.label}<span class="tv">${s.sub}</span></button>`).join('')}
+      </div>
+      <div class="dir-pick ${showDir?'':'hidden'}" data-lens="${l.id}">
+        <span class="dir-lbl">sens</span>
+        <button class="dir-b dir-bull ${cur.dir==='bull'?'on':''}" onclick="setLensDir('${l.id}','bull')">▲ haussier</button>
+        <button class="dir-b dir-bear ${cur.dir==='bear'?'on':''}" onclick="setLensDir('${l.id}','bear')">▼ baissier</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+function setLensDir(id,d){
+  const cur=tEngine.lens4[id]||{};
+  cur.dir = (cur.dir===d)?null:d;
+  tEngine.lens4[id]=cur;
+  document.querySelectorAll(`#t_lensEngine .dir-pick[data-lens="${id}"] .dir-b`).forEach(b=>{
+    b.classList.toggle('on', b.classList.contains('dir-'+cur.dir));
+  });
+  refreshVerdict();
+}
+function setLens4(id,state){
+  const cur=tEngine.lens4[id]||{};
+  cur.state = (cur.state===state) ? null : state;   // re-clic = désélection
+  cur.on = !!cur.state;
+  if(!cur.state || cur.state==='calm') cur.dir=null; // calme = pas de sens
+  tEngine.lens4[id]=cur;
+  // re-render la ligne pour afficher/masquer le sélecteur de sens
+  const showDir = cur.state && cur.state!=='calm';
+  const dp=document.querySelector(`#t_lensEngine .dir-pick[data-lens="${id}"]`);
+  if(dp){ dp.classList.toggle('hidden',!showDir); dp.querySelectorAll('.dir-b').forEach(b=>b.classList.toggle('on',b.classList.contains('dir-'+cur.dir))); }
+  refreshTriHighlight(id);
+  refreshVerdict();
+}
+function refreshTriHighlight(id){
+  const cur=tEngine.lens4[id]||{};
+  const l=LENS4.find(x=>x.id===id);
+  document.querySelectorAll(`#t_lensEngine .tri[data-lens="${id}"] button`).forEach((b,i)=>{
+    b.classList.toggle('on', l.states[i].v===cur.state);
+  });
+}
+function setLens4Pct(id,v){ tEngine.lens4[id]=tEngine.lens4[id]||{}; tEngine.lens4[id].pct=v; if(v) tEngine.lens4[id].on=tEngine.lens4[id].on||!!tEngine.lens4[id].state; }
+
+function renderIvState(containerId, iv){
+  tEngine.iv = iv||null;
+  const el=document.getElementById(containerId);
+  el.innerHTML = IV_STATES.map(s=>`<button class="${tEngine.iv===s.v?'on':''}" data-iv="${s.v}" onclick="setIvState('${s.v}')">${s.label}<span class="tv" style="display:block;font-size:9px;opacity:.7;margin-top:2px">${s.sub}</span></button>`).join('');
+}
+function setIvState(v){
+  tEngine.iv = (tEngine.iv===v)?null:v;
+  document.querySelectorAll('#t_ivState button').forEach(b=>b.classList.toggle('on',b.dataset.iv===tEngine.iv&&tEngine.iv!==null));
+  refreshVerdict();
+}
+function renderLevelPick(containerId, level){
+  tEngine.ctx.level = level||null;
+  const el=document.getElementById(containerId); if(!el) return;
+  const v=computeVerdict(tEngine.lens4, tEngine.iv, tEngine.ctx);
+  const reg = v.regime==='neutral'?null:(v.regime==='squeeze'?'stress':v.regime);
+  el.innerHTML = LEVELS.map(L=>{
+    const elig = reg?L[reg]:null;
+    const on = tEngine.ctx.level===L.id;
+    return `<button class="lvl-b ${elig?'e-'+elig:''} ${on?'on':''}" data-lvl="${L.id}" onclick="setLevel('${L.id}')" title="${L.zone}">
+      <span class="lvl-name">${L.name}</span>
+      <span class="lvl-elig">${elig?ELIG_LABEL[elig]:'—'}</span>
+    </button>`;
+  }).join('');
+}
+function setLevel(id){
+  tEngine.ctx.level = (tEngine.ctx.level===id)?null:id;
+  renderLevelPick('t_levelPick', tEngine.ctx.level);
+  refreshVerdict();
+}
+function toggleCtx(k){
+  tEngine.ctx[k]=!tEngine.ctx[k];
+  document.querySelectorAll(`#t_ctxBar button[data-ctx="${k}"]`).forEach(b=>b.classList.toggle('on',!!tEngine.ctx[k]));
+  refreshVerdict();
+}
+function paintCtxBar(){
+  document.querySelectorAll('#t_ctxBar button').forEach(b=>b.classList.toggle('on',!!tEngine.ctx[b.dataset.ctx]));
+}
+
+function refreshVerdict(){
+  const v = computeVerdict(tEngine.lens4, tEngine.iv, tEngine.ctx);
+  tEngine.last = v;
+  // re-render niveaux (l'éligibilité dépend du régime courant)
+  if(document.getElementById('t_levelPick')) renderLevelPick('t_levelPick', tEngine.ctx.level);
+  // auto-remplit régime / taille / conviction (modifiables ensuite)
+  if(v.regime!=='neutral'){ document.getElementById('t_regime').value = v.regime; }
+  if(v.verdict==='trade' || v.size>0){ document.getElementById('t_size').value = v.size; }
+  tradeConv = v.conv; paintConv();
+  // panneau
+  const cls = v.verdict==='trade'?'v-trade':v.verdict==='caution'?'v-caution':'v-pass';
+  const gridPill = v.grid ? `<span class="grid-pill grid-${v.grid}">GRILLE ${v.grid}</span>` : `<span class="grid-pill grid-none">—</span>`;
+  const biasPill = v.bias ? `<span class="bias-pill bias-${v.bias}">${v.bias==='bull'?'▲ haussier':'▼ baissier'}</span>` : (v.contradiction?`<span class="bias-pill bias-contra">⚡ contradiction ${v.nBull}↑/${v.nBear}↓</span>`:'');
+  let lvlLine='';
+  if(v.levelInfo){
+    const eligCls = v.levelInfo.elig==='actif'?'e-actif':v.levelInfo.elig==='eteint'?'e-eteint':'e-other';
+    lvlLine = `<div class="vd-line"><span class="vd-k">Niveau</span><span class="vd-v"><b>${v.levelInfo.name}</b> <span class="lvl-tag ${eligCls}">${ELIG_LABEL[v.levelInfo.elig]||'—'}</span> ${v.levelInfo.ivNote?`· <span class="faint">IV: ${v.levelInfo.ivNote}</span>`:''}</span></div>`;
+  }
+  document.getElementById('t_verdict').className = 'verdict '+cls;
+  document.getElementById('t_verdict').innerHTML = `
+    <div class="verdict-top">
+      <div class="verdict-badge">
+        <span class="vb-label">${VERDICT_LABEL[v.verdict]||'—'}</span>
+        <span class="vb-size">${v.size}%</span>
+        <span class="vb-sizecap">${v.nSet}/4 lentilles</span>
+      </div>
+      <div class="verdict-detail">
+        <div class="vd-line"><span class="vd-k">Régime</span><span class="vd-v">${v.regimeLabel} ${biasPill}</span></div>
+        <div class="vd-line"><span class="vd-k">Grille</span><span class="vd-v">${gridPill} ${v.gridReason||'<span class="faint">renseigner GEX</span>'}</span></div>
+        ${lvlLine}
+        <div class="vd-line"><span class="vd-k">Action</span><span class="vd-v action-cell">${v.action||'<span class="faint">renseigner grille + niveau + IV ATM</span>'}</span></div>
+      </div>
+    </div>
+    ${renderVerdictFlags()}`;
+}
+function renderVerdictFlags(){
+  const v=computeVerdict(tEngine.lens4, tEngine.iv, tEngine.ctx);
+  if(!v.flags || !v.flags.length) return '';
+  return `<div class="verdict-flags">${v.flags.map(f=>`<span class="vflag vflag-${f.k}">${f.k==='stop'?'⛔':f.k==='warn'?'⚠':'✓'} ${f.t}</span>`).join('')}</div>`;
+}
+// migration : transforme un ancien objet lenses {gex:{on,pct}} en lens4 {gex:{state,pct}}
+function migrateLenses(old){
+  if(!old) return {};
+  const out={};
+  Object.keys(old).forEach(k=>{
+    if(old[k] && (old[k].state || old[k].on)){
+      out[k] = {state:old[k].state || (old[k].on?'tension':null), pct:old[k].pct, dir:old[k].dir||null, on:!!(old[k].state||old[k].on)};
+    }
+  });
+  return out;
+}
+
+/* ====================== ONGLET EDGE (référence) ====================== */
+function eligCell(e){
+  const lbl=ELIG_LABEL[e]||'—';
+  const cls = e==='actif'?'ec-actif':e==='eteint'?'ec-eteint':e==='cassure'?'ec-cassure':'ec-other';
+  return `<td class="${cls}">${lbl}</td>`;
+}
+function renderEdge(){
+  const el=document.getElementById('edgeContent');
+  // 1. Workflow 6 étapes
+  const wf=[
+    ['1','Lire les 4 lentilles BGE (matin)','Gamma (GEX/flip) · Vega (VVOL/VOL) · RR 25Δ pct · Term/Phys (VX1-VX3)'],
+    ['2','Compter & classer le régime','n lentilles alignées → forward-looking mène, gamma retarde · CALME 0-1 / TENSION 2 / STRESS ≥3'],
+    ['3','Sélectionner niveaux actifs','le centre s\'éteint vers les bords quand le stress monte'],
+    ['4','Action selon grille gamma','Gamma + → GRILLE A (fade) · Gamma − → GRILLE B (momentum)'],
+    ['5','Filtres intraday','GEX bascule (A↔B) · VEX/CEX + IV (peak aimant) · ΔIV (Vanna vs Charm)'],
+    ['6','Exécution au contact','spot touche niveau actif non invalidé · bagottage 2-3 ticks = abandon → entrer · stop vol-ajusté · TP 30-50%, trail RR 1:1'],
+  ];
+  // 2. lentille × régime
+  const lr=[
+    ['GEX','%','Grille A, fade','niveaux mous, ½ taille','Grille B, momentum'],
+    ['VVOL/VOL','%','fades pleins','Vanna s\'arme','coupe les fades'],
+    ['RR 25Δ','pct','niveaux fiables','pencher 1 côté','95e+, pas de fade'],
+    ['VX1-VX3','%','contango, calme','flattening','backwardation'],
+  ];
+  // 3. verdict→sizing
+  const vs=[
+    ['0-1 lentille','PASS','0%','v-pass'],
+    ['2 contradictoires','CAUTION','0%','v-caution'],
+    ['3 alignées','ON TRADE','1%','v-trade'],
+    ['4 alignées','ON TRADE','2%','v-trade'],
+  ];
+  el.innerHTML = `
+  <div class="edge-block">
+    <h3 class="edge-h">Workflow go / no-go — 6 étapes + surcouches</h3>
+    <div class="edge-wf">
+      ${wf.map(s=>`<div class="ewf-row"><span class="ewf-num">${s[0]}</span><div><div class="ewf-t">${s[1]}</div><div class="ewf-d">${s[2]}</div></div></div>`).join('')}
+    </div>
+    <div class="edge-surcouche">
+      <span class="vflag vflag-stop">⛔ Macro CPI/NFP/FOMC — seuls Max/Min event tiennent, jamais au print</span>
+      <span class="vflag vflag-stop">⛔ Corrél 4 indices > 0,9 (ES/NQ/YM/RTY) — 1 seul trade, réduire la taille</span>
+      <span class="vflag vflag-warn">⚠ Gap d'open — revalider les niveaux figés dans les 5 premières minutes</span>
+      <span class="vflag vflag-warn">⚠ Sortie avant la cloche — day trading strict, pas d'overnight</span>
+    </div>
+  </div>
+
+  <div class="edge-2col">
+    <div class="edge-block">
+      <h3 class="edge-h">Lentille × régime → effet</h3>
+      <table class="edge-tbl">
+        <thead><tr><th>Lentille</th><th>Indic.</th><th class="th-calm">CALME</th><th class="th-tension">TENSION</th><th class="th-stress">STRESS</th></tr></thead>
+        <tbody>${lr.map(r=>`<tr><td class="mono">${r[0]}</td><td class="faint">${r[1]}</td><td class="ec-calm">${r[2]}</td><td class="ec-tension2">${r[3]}</td><td class="ec-stress2">${r[4]}</td></tr>`).join('')}</tbody>
+      </table>
+      <p class="edge-note">Contradiction : forward-looking (Vega, RR, Term) mènent · Gamma retarde.</p>
+    </div>
+    <div class="edge-block">
+      <h3 class="edge-h">Verdict → sizing</h3>
+      <table class="edge-tbl">
+        <thead><tr><th>En action</th><th>Verdict</th><th>Taille</th></tr></thead>
+        <tbody>${vs.map(r=>`<tr><td>${r[0]}</td><td><span class="verdict-tag ${r[3]}">${r[1]}</span></td><td class="mono"><b>${r[2]}</b></td></tr>`).join('')}</tbody>
+      </table>
+      <p class="edge-note">Kelly bayésien BGE · ≥3/4 alignées = action. Contradiction 2v2 = rupture = CAUTION.</p>
+    </div>
+  </div>
+
+  <div class="edge-block">
+    <h3 class="edge-h">Niveaux actifs par régime — extinction centre → bords</h3>
+    <table class="edge-tbl">
+      <thead><tr><th>Niveau</th><th>Zone</th><th class="th-calm">CALME</th><th class="th-tension">TENSION</th><th class="th-stress">STRESS</th></tr></thead>
+      <tbody>${LEVELS.map(L=>`<tr><td class="mono">${L.name}</td><td class="faint">${L.zone}</td>${eligCell(L.calm)}${eligCell(L.tension)}${eligCell(L.stress)}</tr>`).join('')}</tbody>
+    </table>
+    <p class="edge-note">Contrôles = premiers à céder. Event-levels = seuls valides en stress. Peaks Vanna/Charm hors de cette grille.</p>
+  </div>
+
+  <div class="edge-2col">
+    <div class="edge-block">
+      <h3 class="edge-h"><span class="grid-pill grid-A">GRILLE A</span> Gamma + · FADE</h3>
+      <table class="edge-tbl">
+        <thead><tr><th>Niveau</th><th>Action de base</th><th>IV stable</th><th>IV monte >1%</th></tr></thead>
+        <tbody>${LEVELS.map(L=>{const g=GRID_A[L.id];return `<tr><td class="mono">${L.name}</td><td>${g.base}</td><td class="faint">${g.iv_stable}</td><td class="ec-warn">${g.iv_move}</td></tr>`;}).join('')}</tbody>
+      </table>
+    </div>
+    <div class="edge-block">
+      <h3 class="edge-h"><span class="grid-pill grid-B">GRILLE B</span> Gamma − · MOMENTUM</h3>
+      <table class="edge-tbl">
+        <thead><tr><th>Niveau</th><th>Rôle</th><th>IV stable</th><th>IV spike</th></tr></thead>
+        <tbody>${LEVELS.map(L=>{const g=GRID_B[L.id];return `<tr><td class="mono">${L.name}</td><td>${g.base}</td><td class="faint">${g.iv_stable}</td><td class="ec-stress2">${g.iv_move}</td></tr>`;}).join('')}</tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="edge-block">
+    <h3 class="edge-h">Peaks Vanna / Charm — pilotés par lentille (vol × temps)</h3>
+    <table class="edge-tbl">
+      <thead><tr><th>Lentille</th><th>Condition</th><th class="th-calm">Gamma +</th><th class="th-stress">Gamma −</th></tr></thead>
+      <tbody>${PEAKS.map(p=>`<tr><td class="mono">${p.lens}</td><td class="faint">${p.cond}</td><td>${p.gpos}</td><td>${p.gneg}</td></tr>`).join('')}</tbody>
+    </table>
+    <p class="edge-note">Hiérarchie : <b>IV (Vanna) > Charm > Gamma</b>. Cross-over Vanna=Charm = aimantation max (pin probable). En 0DTE dernière heure, Charm domine (inversion).</p>
+  </div>
+
+  <div class="edge-block edge-rule">
+    <h3 class="edge-h">Règle dealer / corrélation spot-vol</h3>
+    <p class="edge-rule-p">Si corrél spot/vol négative en moyenne :</p>
+    <p class="edge-rule-p">→ <b>Régime gamma négatif</b> = amplification des dealers / <b>Vanna prime</b> (jouer si ΔIV > 1%).</p>
+    <p class="edge-rule-p">→ <b>Régime gamma positif</b> = ralentissement des dealers / <b>Charm prime</b> (jouer si ΔIV stable ou décroît).</p>
+  </div>
+  `;
+}
+
 /* ====================== GUARD-RAILS (5e lentille : discipline) ====================== */
 // Calcule les séries en cours sur les trades clôturés, ordre chronologique
 function disciplineState(){
@@ -1006,7 +1589,7 @@ function go(view){
   document.querySelectorAll('#nav button[data-view]').forEach(x=>x.classList.toggle('active',x.dataset.view===view));
   document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
   document.getElementById('view-'+view).classList.add('active');
-  if(view==='stats')renderStats(); if(view==='confluence')renderConf(); if(view==='tags')renderTagManager(); if(view==='timeline')renderTimeline(); if(view==='today')renderToday();
+  if(view==='stats')renderStats(); if(view==='confluence')renderConf(); if(view==='tags')renderTagManager(); if(view==='timeline')renderTimeline(); if(view==='today')renderToday(); if(view==='edge')renderEdge();
 }
 function softRefresh(){ renderToday(); renderTimeline(); }
 function renderToday(){
@@ -1408,7 +1991,12 @@ function openTrade(id, prefill){
   document.getElementById('t_legShort').value = t&&t.legShort?t.legShort:'';
   document.getElementById('t_legShortQty').value = t&&t.legShortQty?t.legShortQty:'';
   document.getElementById('t_conf').value = t&&t.conf?t.conf:'';
-  renderLensPick('t_lenses', t&&t.lenses?t.lenses:{});
+  // moteur de verdict : lens4 + IV ATM + contexte
+  tEngine = {lens4: t&&t.lens4 ? JSON.parse(JSON.stringify(t.lens4)) : migrateLenses(t&&t.lenses), iv: t&&t.iv?t.iv:null, ctx: t&&t.ctx?{...t.ctx}:{}};
+  renderLensEngine('t_lensEngine', tEngine.lens4);
+  renderLevelPick('t_levelPick', tEngine.ctx.level);
+  renderIvState('t_ivState', tEngine.iv);
+  paintCtxBar();
   document.getElementById('t_struct').value = t&&t.struct?t.struct:'';
   document.getElementById('t_size').value = t&&t.size?t.size:'';
   tradeConv = t&&t.conv?t.conv:0; paintConv();
@@ -1420,7 +2008,16 @@ function openTrade(id, prefill){
   renderTagPool('t_tagpool', t&&t.tags?[...t.tags]:[]);
   attInit('t', t&&t.atts?[...t.atts]:[]);
   document.getElementById('t_delBtn').style.display = id?'inline-block':'none';
+  // sync date pairs
+  const ep=document.getElementById('t_entryPairs'); if(ep) ep.value=document.getElementById('t_entry').value;
+  // quick log off par défaut à l'ouverture
+  document.getElementById('t_quick').checked=false; toggleQuickLog();
+  refreshVerdict();
   document.getElementById('tradeModal').classList.add('open');
+}
+function toggleQuickLog(){
+  const on=document.getElementById('t_quick').checked;
+  document.getElementById('t_fullSec').classList.toggle('hidden', on);
 }
 function saveTrade(){
   const under=document.getElementById('t_under').value.trim();
@@ -1429,6 +2026,10 @@ function saveTrade(){
   if(tradeType==='pairs' && !legLong){ toast('Jambe longue requise'); return; }
   const pp=document.getElementById('t_pnlpct').value.trim();
   const pd=document.getElementById('t_pnldol').value.trim();
+  // miroir legacy {on,pct} pour les vues existantes (table, timeline, widgets)
+  const lensMirror={};
+  Object.keys(tEngine.lens4).forEach(k=>{ if(tEngine.lens4[k]&&tEngine.lens4[k].state) lensMirror[k]={on:true,pct:tEngine.lens4[k].pct||'',state:tEngine.lens4[k].state}; });
+  const v=computeVerdict(tEngine.lens4, tEngine.iv, tEngine.ctx);
   const rec={
     type:tradeType,
     entry:document.getElementById('t_entry').value||todayISO(),
@@ -1437,7 +2038,11 @@ function saveTrade(){
     legLong, legLongQty:document.getElementById('t_legLongQty').value.trim(),
     legShort:document.getElementById('t_legShort').value.trim(), legShortQty:document.getElementById('t_legShortQty').value.trim(),
     conf:document.getElementById('t_conf').value.trim(),
-    lenses:getLensData('t_lenses'),
+    lens4: JSON.parse(JSON.stringify(tEngine.lens4)),
+    iv: tEngine.iv,
+    ctx: {...tEngine.ctx},
+    verdict: {v:v.verdict, grid:v.grid, action:v.action, size:v.size, regime:v.regime, bias:v.bias, level:tEngine.ctx.level, levelName:v.levelInfo?v.levelInfo.name:null},
+    lenses:lensMirror,
     struct:document.getElementById('t_struct').value.trim(),
     size:document.getElementById('t_size').value.trim(),
     conv:tradeConv,
@@ -2116,20 +2721,18 @@ async function cloudSignOut(){ try{ await sb.auth.signOut(); }catch(e){} session
 
 /* ====================== BOOT ====================== */
 let _zonesBound=false;
-function bindZones(){
-  if(_zonesBound)return;
-  attBindZone('e','e_imgzone','e_imgfile'); attBindZone('e','e_doczone','e_docfile');
-  attBindZone('t','t_imgzone','t_imgfile'); attBindZone('t','t_doczone','t_docfile');
-  attBindZone('c','c_imgzone','c_imgfile'); attBindZone('c','c_doczone','c_docfile');
-  _zonesBound=true;
-}
 function renderAll(){
-  bindZones();
+  if(!_zonesBound){
+    attBindZone('e','e_imgzone','e_imgfile'); attBindZone('e','e_doczone','e_docfile');
+    attBindZone('t','t_imgzone','t_imgfile'); attBindZone('t','t_doczone','t_docfile');
+    attBindZone('c','c_imgzone','c_imgfile'); attBindZone('c','c_doczone','c_docfile');
+    _zonesBound=true;
+  }
   renderToday(); renderJournal(); renderTrades(); renderConf(); renderTagManager(); refreshTagFilters(); renderTimeline();
 }
 async function startApp(){
   await LS.load();
-  // 1re connexion sans ligne cloud mais données locales -> on initialise le cloud
+  // 1re connexion sans ligne cloud mais cache local -> on initialise le cloud
   if(CLOUD && session){
     if(!_cloudUpdatedAt) await cloudFlush();
     else setSyncBadge('ok');
